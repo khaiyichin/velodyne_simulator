@@ -20,6 +20,10 @@
 
   <export>
     <build_type>ament_cmake</build_type>
+    <!-- ${prefix} is essentially the directory where the package.xml would be, but in the install directory -->
+    <!-- i.e., <ros2-workspace>/install/velodyne_description/share/velodyne_description -->
+    <!-- To access the LiDAR meshes outside of this repo (the meshes/ folder), the export path has to be one level above ${prefix} -->
+    <gazebo_ros gazebo_model_path="${prefix}/.." />
   </export>
 
 </package>
